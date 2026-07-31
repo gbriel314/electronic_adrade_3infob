@@ -1,0 +1,278 @@
+/* Reset global */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Arial, sans-serif;
+}
+
+body {
+    background-color: #f4f6f9; /* Color de fondo gris claro sutil similar a la captura */
+}
+
+/* Banner superior de información */
+.top-banner {
+    background-color: #ffffff;
+    font-size: 13px;
+    padding: 10px 5%;
+    border-bottom: 1px solid #e0e0e0;
+    color: #333;
+}
+.top-banner span {
+    color: #5c0632;
+    margin-right: 5px;
+}
+
+/* Sección principal (Hero) */
+.hero {
+    position: relative;
+    height: 70vh;
+    min-height: 520px;
+    /* CAMBIAR IMAGEN HERO AQUÍ: Puedes guardarla en 'img/hero-f1.png' si lo prefieres */
+    background: linear-gradient(rgba(0, 0, 0, 0.25), rgba(0, 0, 0, 0.45)), 
+                url('img/img22.jpg') no-repeat center center/cover;
+    padding: 0 5%;
+}
+
+/* Barra de navegación */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 25px 0;
+}
+
+.nav-left, .nav-right {
+    display: flex;
+    align-items: center;
+    gap: 30px;
+}
+
+.logo {
+    color: white;
+    font-size: 22px;
+    font-weight: bold;
+    letter-spacing: 2px;
+}
+.logo-sub {
+    font-size: 12px;
+    font-weight: 300;
+    display: block;
+    line-height: 0.5;
+    letter-spacing: 4px;
+}
+
+.nav-links {
+    display: flex;
+    list-style: none;
+    gap: 25px;
+}
+
+.nav-links a, .nav-right a {
+    color: white;
+    text-decoration: none;
+    font-size: 15px;
+    font-weight: 400;
+}
+
+.btn-login {
+    border: 1px solid white;
+    padding: 8px 18px;
+    border-radius: 20px;
+}
+
+/* Contenido de texto F1 */
+.hero-content {
+    margin-top: 50px;
+    color: white;
+}
+
+.hero-content h1 {
+    font-size: 45px;
+    font-weight: 300;
+    line-height: 1.2;
+    margin-bottom: 25px;
+}
+
+.btn-cta {
+    background-color: white;
+    color: #5c0632;
+    border: none;
+    padding: 12px 35px;
+    font-size: 15px;
+    font-weight: bold;
+    border-radius: 25px;
+    cursor: pointer;
+}
+
+/* Buscador Flotante */
+.booking-container {
+    position: absolute;
+    bottom: -60px;
+    left: 5%;
+    right: 5%;
+    background: white;
+    border-radius: 8px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+    overflow: hidden;
+    z-index: 10;
+}
+
+.booking-tabs {
+    display: flex;
+    background-color: #f3f3f5;
+}
+
+.tab-btn {
+    flex: 1;
+    background: none;
+    border: none;
+    padding: 16px 20px;
+    font-size: 14px;
+    color: #555;
+    cursor: pointer;
+    text-align: left;
+    border-bottom: 3px solid transparent;
+}
+
+.tab-btn i {
+    margin-right: 8px;
+}
+
+.tab-btn.active {
+    background-color: white;
+    color: #5c0632;
+    border-bottom: 3px solid #5c0632;
+    font-weight: bold;
+}
+
+.booking-form {
+    padding: 25px;
+}
+
+.radio-group {
+    display: flex;
+    gap: 25px;
+    margin-bottom: 20px;
+    font-size: 14px;
+}
+
+.form-inputs {
+    display: flex;
+    border: 1px solid #dcdcdc;
+    border-radius: 4px;
+}
+
+.input-field {
+    flex: 1;
+    padding: 12px 15px;
+    border-right: 1px solid #dcdcdc;
+    display: flex;
+    flex-direction: column;
+}
+
+.input-field:last-child {
+    border-right: none;
+}
+
+.input-field label {
+    font-size: 11px;
+    color: #757575;
+    text-transform: uppercase;
+    margin-bottom: 5px;
+}
+
+.input-field input, .input-field select {
+    border: none;
+    outline: none;
+    font-size: 14px;
+    background: transparent;
+}
+
+/* ESTILOS DE LA NUEVA SECCIÓN DE TARJETAS */
+.cards-section {
+    max-width: 90%;
+    margin: 120px auto 50px auto; /* Gran margen superior para no chocar con el buscador flotante */
+}
+
+.cards-section h2 {
+    font-size: 32px;
+    color: #333;
+    font-weight: 300;
+    margin-bottom: 30px;
+}
+
+.cards-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr); /* 4 Columnas perfectas */
+    gap: 20px;
+}
+
+.card {
+    background-color: white;
+    border-radius: 16px; /* Bordes muy redondeados como la foto */
+    box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    cursor: pointer;
+    transition: transform 0.35s ease, box-shadow 0.35s ease, filter 0.35s ease, opacity 0.35s ease, z-index 0.1s;
+}
+
+.card:hover {
+    transform: translateY(-4px);
+}
+
+/* Efecto "spotlight": al hacer clic, la tarjeta elegida crece y se aclara,
+   mientras las demás se oscurecen y se reducen un poco */
+.cards-grid.has-selected .card {
+    filter: brightness(0.55);
+    transform: scale(0.94);
+}
+
+.cards-grid.has-selected .card.selected {
+    filter: brightness(1.08);
+    transform: scale(1.08);
+    box-shadow: 0 15px 35px rgba(0,0,0,0.25);
+    position: relative;
+    z-index: 5;
+}
+
+.cards-grid.has-selected .card.selected:hover {
+    transform: scale(1.08);
+}
+
+.card-img {
+    width: 100%;
+    height: 180px;
+    object-fit: cover; /* Ajusta la imagen sin deformarla */
+}
+
+.card-body {
+    padding: 20px;
+    flex-grow: 1;
+}
+
+.card-body h3 {
+    font-size: 20px;
+    color: #444;
+    font-weight: 300;
+    line-height: 1.3;
+}
+
+.card-footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 20px;
+    border-top: 1px solid #f0f0f0;
+    text-decoration: none;
+    color: #111;
+    font-weight: 600;
+    font-size: 13px;
+}
+
+.card-footer i {
+    font-size: 11px;
+    color: #666;
+}

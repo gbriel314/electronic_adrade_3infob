@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Qatar Airways - Clon</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+
+<body>
+
+    <header class="hero">
+        <nav class="navbar">
+            <div class="nav-left">
+                <img src="img/LOGO1.ico" alt="60" height="70">
+                <ul class="nav-links">
+                    <li><a href="#">INICIO</a></li>
+                    <li><a href="#">SERVICIO</a></li>
+                    <li><a href="#">LOGROS</a></li>
+                    <li><a href="#">PERSONAL </a></li>
+                </ul>
+            </div>
+            <div class="nav-right">
+                <a href="#">Help</a>
+                <a href="#">🌐 EN</a>
+                <a href="#" class="btn-login">Log in | Sign up</a>
+            </div>
+        </nav>
+
+        <div class="hero-content">
+        </div>
+
+        <div class="booking-container">
+            <div class="booking-tabs">
+                <button class="tab-btn active" onclick="switchTab(event, 'definicion')"><i
+                        class="fa-solid fa-microchip"></i> ¿Qué es?</button>
+                <button class="tab-btn" onclick="switchTab(event, 'componentes')"><i class="fa-solid fa-plug"></i>
+                    Componentes</button>
+                <button class="tab-btn" onclick="switchTab(event, 'utilidad')"><i class="fa-solid fa-gears"></i> ¿Para
+                    qué sirve?</button>
+                <button class="tab-btn" onclick="switchTab(event, 'futuro')"><i class="fa-solid fa-atom"></i>
+                    Importancia</button>
+            </div>
+
+            <div class="booking-form">
+                <div class="form-inputs" style="border: none; display: flex; gap: 20px; flex-wrap: wrap;">
+
+                    <div id="definicion" class="tab-content active-content" style="flex: 1; min-width: 250px;">
+                        <div class="input-field" style="border: none;">
+                            <label style="color: #5c0632; font-size: 13px;">La Electrónica</label>
+                            <p style="font-size: 14px; line-height: 1.5; color: #333; margin-top: 5px;">
+                                Es la rama de la física aplicada que se encarga del control y flujo de los electrones u
+                                otras partículas cargadas eléctricamente. A diferencia de la electricidad común, la
+                                electrónica procesa información mediante señales eléctricas.
+                            </p>
+                        </div>
+                    </div>
+
+                    <div id="componentes" class="tab-content" style="flex: 1; min-width: 250px; display: none;">
+                        <div class="input-field" style="border: none;">
+                            <label style="color: #5c0632; font-size: 13px;">Componentes Básicos</label>
+                            <ul
+                                style="font-size: 14px; line-height: 1.4; color: #333; margin-top: 5px; padding-left: 15px;">
+                                <li><strong>Resistencias:</strong> Limitan el paso de la corriente.</li>
+                                <li><strong>Condensadores:</strong> Almacenan energía temporalmente.</li>
+                                <li><strong>Diodos/LEDs:</strong> Permiten el flujo en una sola dirección.</li>
+                                <li><strong>Transistores:</strong> Amplifican o cortan señales eléctricas.</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div id="utilidad" class="tab-content" style="flex: 1; min-width: 250px; display: none;">
+                        <div class="input-field" style="border: none;">
+                            <label style="color: #5c0632; font-size: 13px;">¿Para qué sirve?</label>
+                            <p style="font-size: 14px; line-height: 1.5; color: #333; margin-top: 5px;">
+                                Permite automatizar procesos, transmitir datos a grandes distancias y crear sistemas
+                                inteligentes. Es el pilar fundamental que hace funcionar computadoras, teléfonos
+                                celulares, equipos médicos y sistemas de transporte.
+                            </p>
+                        </div>
+                    </div>
+
+                    <div id="futuro" class="tab-content" style="flex: 1; min-width: 250px; display: none;">
+                        <div class="input-field" style="border: none;">
+                            <label style="color: #5c0632; font-size: 13px;">Importancia del Futuro</label>
+                            <p style="font-size: 14px; line-height: 1.5; color: #333; margin-top: 5px;">
+                                La electrónica es la columna vertebral del avance tecnológico. Su evolución es clave
+                                para el desarrollo de la inteligencia artificial, el internet de las cosas (IoT), las
+                                energías renovables y la computación cuántica que definirán las próximas décadas.
+                            </p>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <main class="cards-section">
+        <h2>Conceptos clave and aplicaciones</h2>
+
+        <div class="cards-grid" id="cardsGrid">
+            <div class="card" onclick="toggleCardFocus(this)">
+                <img src="img/micro_chip.jpg    " alt="Circuitos Integrados" class="card-img">
+                <div class="card-body">
+                    <h3>Circuitos Integrados y Microchips</h3>
+                </div>
+                <div class="card-footer">
+                    <span>Ver componentes</span>
+                    <i class="fa-solid fa-chevron-right"></i>
+                </div>
+            </div>
+
+            <div class="card" onclick="toggleCardFocus(this)">
+                <img src="img/automa.jpg" alt="Automatización y Robótica" class="card-img">
+                <div class="card-body">
+                    <h3>Sistemas de Automatización y Robótica</h3>
+                </div>
+                <div class="card-footer">
+                    <span>Ver aplicaciones</span>
+                    <i class="fa-solid fa-chevron-right"></i>
+                </div>
+            </div>
+
+            <div class="card" onclick="toggleCardFocus(this)">
+                <img src="img/teleco.jpg" alt="Telecomunicaciones" class="card-img">
+                <div class="card-body">
+                    <h3>Procesamiento de Señales y Telecomunicaciones</h3>
+                </div>
+                <div class="card-footer">
+                    <span>Leer más</span>
+                    <i class="fa-solid fa-chevron-right"></i>
+                </div>
+            </div>
+
+            <div class="card" onclick="toggleCardFocus(this)">
+                <img src="img/futur.png" alt="Futuro de la Electrónica" class="card-img">
+                <div class="card-body">
+                    <h3>El Futuro de la Electrónica e IA</h3>
+                </div>
+                <div class="card-footer">
+                    <span>Explorar tendencias</span>
+                    <i class="fa-solid fa-chevron-right"></i>
+                </div>
+            </div>
+        </div>
+    </main>
+    <script src="script.js"></script>
+</body>
+
+</html>
